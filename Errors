@@ -1,0 +1,10 @@
+Exception :   Request processing failed; nested exception is org.springframework.orm.jpa.JpaSystemException: org.hibernate.id.IdentifierGenerationException: ids for this class must be manually assigned before calling save(): com.datami.example2.domain.Role; nested exception is javax.persistence.PersistenceException: org.hibernate.id.IdentifierGenerationException: ids for this class must be manually assigned before calling save(): com.datami.example2.domain.Role
+solution :    Annotate your id with @GeneratedValue(strategy=GenerationType.IDENTITY)
+              Example:  
+                        	@Id @GeneratedValue(strategy=GenerationType.IDENTITY)
+                          @Column(name = "id")
+                          private Integer id;
+                          
+
+Exception :   
+                      
